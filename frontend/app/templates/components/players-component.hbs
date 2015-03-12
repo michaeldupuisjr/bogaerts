@@ -1,0 +1,17 @@
+<h3>Players</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Drafted by</th>
+      <th>Team</th>
+      <th>Name</th>
+      <th>Pos</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each player in players}}
+      {{player-component player=player}}
+    {{/each}}
+  </tbody>
+</table>
