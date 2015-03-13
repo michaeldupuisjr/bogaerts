@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 var Player = DS.Model.extend({
@@ -11,7 +12,7 @@ Player.reopenClass({
     {
       id: 1,
       name: 'Xander Bogaerts',
-      fantasyTeam: null,
+      fantasyTeam: 4,
       position: '3B'
     },
     {
