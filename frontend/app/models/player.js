@@ -1,9 +1,9 @@
 import DS from 'ember-data';
 
 var Player = DS.Model.extend({
-  cml: DS.attr('string'),
   name: DS.attr('string'),
   position: DS.attr('string'),
+  fantasyTeam: DS.belongsTo('fantasy-team')
 });
 
 Player.reopenClass({
@@ -11,13 +11,13 @@ Player.reopenClass({
     {
       id: 1,
       name: 'Xander Bogaerts',
-      cml: '',
+      fantasyTeam: null,
       position: '3B'
     },
     {
       id: 2,
       name: 'Dustin Pedroia',
-      cml: 'Foo',
+      fantasyTeam: null,
       position: '2B'
     }
   ]

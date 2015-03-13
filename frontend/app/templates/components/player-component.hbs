@@ -1,4 +1,8 @@
-<td>{{view "select" value=selectedTeam content=cmlTeams prompt="Select"}}</td>
-<td>{{player.cml}}</td>
+<td>{{view "select"
+  value=selectedTeam
+  content=fantasyTeams
+  optionLabelPath="content.abbreviation"
+  prompt="Select"}}</td>
+<td>{{player.fantasyTeam.abbreviation}}</td>
 <td>{{player.name}}</td>
 <td>{{player.position}}</td>
