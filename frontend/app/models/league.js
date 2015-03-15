@@ -1,4 +1,4 @@
-import DS from 'ember-data';
+// import DS from 'ember-data';
 
 var League = DS.Model.extend({
   title: DS.attr('string'),
