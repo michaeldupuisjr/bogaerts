@@ -1,18 +1,37 @@
 <h3>American Baseball</h3>
 
 <table>
-  <thead>
-    <tr>
-      <th>Pos</th>
-      <th>Name</th>
-    </tr>
-  </thead>
+  {{partial "partials/player-thead"}}
   <tbody>
     {{#each hitter in players}}
       <tr>
-        <td>{{hitter.position}}</td>
-        <td>{{hitter.name}}</td>
+        {{player-component player=hitter fantasyTeams=fantasyTeams}}
       </tr>
     {{/each}}
   </tbody>
+  <tfoot>
+    <tr>
+      <th colspan=4>Target</th>
+      <td>927</td>
+      <td>234</td>
+      <td>895</td>
+      <td>140</td>
+      <td>.266</td>
+    </tr>
+    <tr>
+      <th colspan=4>Projected</th>
+      <td>{{paSum}}</td>
+      <td>{{hrSum}}</td>
+    </tr>
+    <tr>
+      <th colspan=4>Percentage</th>
+      <td>{{rPercentage}}</td>
+      <td>{{hrPercentage}}</td>
+    </tr>
+    <tr>
+      <th colspan=4>Difference</th>
+      <td>{{rDifference}}</td>
+      <td>{{hrDifference}}</td>
+    </tr>
+  </tfoot>
 </table>

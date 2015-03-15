@@ -1,10 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  hasBeenDrafted: Ember.computed.bool('this.player.fantasyTeam'),
   selectedTeam: null,
-  classNameBindings: ['hasBeenDrafted'],
-  tagName: 'tr',
+  tagName: '',
 
   assignPlayerToTeam: Ember.observer('selectedTeam', function() {
     this.player.set('fantasyTeam', this.selectedTeam);

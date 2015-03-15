@@ -1,17 +1,12 @@
 <h3>Players</h3>
 
 <table>
-  <thead>
-    <tr>
-      <th>Drafted by</th>
-      <th>Team</th>
-      <th>Name</th>
-      <th>Pos</th>
-    </tr>
-  </thead>
+  {{partial "partials/player-thead"}}
   <tbody>
     {{#each player in players}}
-      {{player-component player=player fantasyTeams=fantasyTeams}}
+    <tr {{bind-attr class="player.fantasyTeam:has-been-drafted"}}>
+        {{player-component player=player fantasyTeams=fantasyTeams}}
+      </tr>
     {{/each}}
   </tbody>
 </table>
