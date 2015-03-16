@@ -1,8 +1,14 @@
-<td>{{view "select"
+<td>
+  {{view "select"
   value=selectedTeam
   content=fantasyTeams
   optionLabelPath="content.abbreviation"
-  prompt="Select"}}</td>
+  prompt="Select"}}
+
+  {{#if hasBeenDrafted}}
+    <button{{action "dropPlayer" player}}>x</button>
+  {{/if}}
+</td>
 <td>{{player.fantasyTeam.abbreviation}}</td>
 <td>{{player.name}}</td>
 <td>{{player.pos}}</td>
