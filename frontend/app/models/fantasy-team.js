@@ -1,4 +1,4 @@
-// import DS from 'ember-data';
+import DS from 'ember-data';
 
 var FantasyTeam = DS.Model.extend({
   abbreviation: DS.attr('string'),

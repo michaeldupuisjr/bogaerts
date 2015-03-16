@@ -7,8 +7,7 @@ firebase = Firebase::Client.new(base_uri)
 
 players = SmarterCSV.process('csv/hitters.csv')
 players.each do |player|
-  firebase.push('players', {
-                             avg: player[:avg],
+  firebase.push('players', { avg: player[:avg],
                              fg_playerid: player[:playerid],
                              hr: player[:hr],
                              name: player[:name],
@@ -18,8 +17,7 @@ players.each do |player|
                              sb: player[:sb],
                              sum: player[:sum],
                              value_lower: player[:lower],
-                             value_upper: player[:upper]
-  })
+                             value_upper: player[:upper] })
 end
 
 fantasyTeamAbbreviations = %w{ MG SR MC MD BW JW DW TM}
