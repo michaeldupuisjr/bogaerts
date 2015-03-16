@@ -1,32 +1,16 @@
 import Ember from 'ember';
 
-var Player = DS.Model.extend({
+export default DS.Model.extend({
+  avg: DS.attr('number'),
+  fantasyTeam: DS.belongsTo('fantasy-team'),
+  fg_playerid: DS.attr('number'),
   hr: DS.attr('number'),
   name: DS.attr('string'),
-  pa: DS.attr('number'),
-  position: DS.attr('string'),
-  fantasyTeam: DS.belongsTo('fantasy-team')
+  pos: DS.attr('string'),
+  r: DS.attr('number'),
+  rbi: DS.attr('number'),
+  sb: DS.attr('number'),
+  sum: DS.attr('number'),
+  value_lower: DS.attr('number'),
+  value_upper: DS.attr('number'),
 });
-
-Player.reopenClass({
-  FIXTURES: [
-    {
-      id: 1,
-      name: 'Xander Bogaerts',
-      fantasyTeam: 4,
-      position: '3B',
-      pa: 604,
-      hr: 18
-    },
-    {
-      id: 2,
-      name: 'Dustin Pedroia',
-      fantasyTeam: null,
-      position: '2B',
-      pa: 658,
-      hr: 11
-    }
-  ]
-});
-
-export default Player;

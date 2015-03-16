@@ -1,19 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // beforeModel: function() {
-    // var players = [];
-    // var player = this.store.createRecord('player', {
-      // name: 'Xander Bogaerts',
-      // position: '3B',
-      // pa: 604,
-      // hr: 18
-    // });
-    // player.save();
-
-    // var fantasyTeam = this.store.createRecord('fantasyTeam', { abbreviation: 'MD' });
-    // fantasyTeam.save();
-  // },
   model: function() {
     return Ember.RSVP.hash({
       fantasyTeams: this.store.find('fantasyTeam'),

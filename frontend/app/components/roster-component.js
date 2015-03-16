@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 var computed = Ember.computed;
+var hrTarget = 234;
 
 export default Ember.Component.extend({
   players: computed('team.players', function() {
@@ -11,18 +12,14 @@ export default Ember.Component.extend({
   hrArray: computed('team.players', function() {
     return this.get('team.players').mapBy('hr');
   }),
-  paArray: computed('team.players', function() {
-    return this.get('team.players').mapBy('pa');
-  }),
 
   // stat calculations
   hrDifference: computed('hrArray', function() {
-    return 234 - this.get('hrSum');
+    return hrTarget - this.get('hrSum');
   }),
   hrPercentage: computed('hrArray', function() {
-    var decimal = Math.floor(this.get('hrSum') / 234 * 100);
+    var decimal = Math.floor(this.get('hrSum') / hrTarget * 100);
     return decimal + "%";
   }),
   hrSum: computed.sum('hrArray'),
-  paSum: computed.sum('paArray'),
 });
