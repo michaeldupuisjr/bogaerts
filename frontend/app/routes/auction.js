@@ -9,8 +9,8 @@ export default Ember.Route.extend({
   },
   setupController: function(controller, model) {
     this._super(controller, model);
-    this.controllerFor('players').set('fantasyTeams', model.fantasyTeams);
-    this.controllerFor('players').set('mdFantasyTeam', model.fantasyTeams.filterBy('abbreviation', 'MD')[0]);
-    this.controllerFor('players').set('players', model.players);
+    this.controllerFor('auction').set('fantasyTeams', model.fantasyTeams);
+    this.controllerFor('auction').set('mdFantasyTeam', model.fantasyTeams.filterBy('abbreviation', 'MD')[0]);
+    this.controllerFor('auction').set('players', model.players);
   }
 });

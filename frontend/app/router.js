@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('players');
+  this.resource('auction');
 });
 
 export default Router;
