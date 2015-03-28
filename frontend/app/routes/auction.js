@@ -7,6 +7,7 @@ export default Ember.Route.extend({
       players: this.store.find('player')
     })
   },
+
   setupController: function(controller, model) {
     this._super(controller, model);
     this.controllerFor('auction').set('fantasyTeams', model.fantasyTeams);
@@ -18,5 +19,5 @@ export default Ember.Route.extend({
     this.controllerFor('auction').set('shortstops', model.players.filterBy('pos', 'SS'));
     this.controllerFor('auction').set('thirdBasemen', model.players.filterBy('pos', '3B'));
     this.controllerFor('auction').set('designatedHitters', model.players.filterBy('pos', 'UTIL'));
-  }
+  },
 });

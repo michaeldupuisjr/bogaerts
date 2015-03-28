@@ -10,9 +10,64 @@ var rbiTarget = 895;
 var sbTarget = 140;
 
 export default Ember.Component.extend({
-  players: computed('team.players', function() {
+  catcher: computed('team.catcher', function() {
     this.updateStats();
-    return this.get('team.players');
+    return this.get('team.catcher');
+  }),
+
+  firstBaseman: computed('team.firstBaseman', function() {
+    this.updateStats();
+    return this.get('team.firstBaseman');
+  }),
+
+  secondBaseman: computed('team.secondBaseman', function() {
+    this.updateStats();
+    return this.get('team.secondBaseman');
+  }),
+
+  thirdBaseman: computed('team.thirdBaseman', function() {
+    this.updateStats();
+    return this.get('team.thirdBaseman');
+  }),
+
+  shortstop: computed('team.shortstop', function() {
+    this.updateStats();
+    return this.get('team.shortstop');
+  }),
+
+  middleInfielder: computed('team.middleInfielder', function() {
+    this.updateStats();
+    return this.get('team.middleInfielder');
+  }),
+
+  cornerInfielder: computed('team.cornerInfielder', function() {
+    this.updateStats();
+    return this.get('team.cornerInfielder');
+  }),
+
+  of1: computed('team.of1', function() {
+    this.updateStats();
+    return this.get('team.of1');
+  }),
+
+  of2: computed('team.of2', function() {
+    this.updateStats();
+    return this.get('team.of2');
+  }),
+
+  of3: computed('team.of3', function() {
+    this.updateStats();
+    return this.get('team.of3');
+  }),
+
+  of4: computed('team.of4', function() {
+    this.updateStats();
+    return this.get('team.of4');
+  }),
+
+  util: computed('team.util', function() {
+    this.updateStats();
+    return this.get('team.util');
   }),
 
   updateStats: observer('team.players', function() {
