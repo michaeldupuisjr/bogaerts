@@ -10,6 +10,8 @@ var rbiTarget = 895;
 var sbTarget = 140;
 
 export default Ember.Component.extend({
+  classNames: 'roster',
+
   catcher: computed('team.catcher', function() {
     this.updateStats();
     return this.get('team.catcher');

@@ -1,10 +1,13 @@
 body {
   font-family: 'Courier New';
+  margin: 0 10px 10px 10px;
 }
 
 h1, h2, h3, h4, h5, h6, th { 
   font-family: 'Helvetica', sans-serif;
 }
+
+h2 { float: left; }
 
 tfoot th {
   text-align: right;
@@ -17,4 +20,27 @@ table, td, th {
 
 .has-been-drafted {
   color: #ccc;
+}
+
+div.available-players {
+  background-color: #f6f6f6;
+  margin-left: 510px;
+}
+
+div.available-players-by-position {
+  float: left;
+  padding: 0 10px;
+}
+
+div.roster {
+  background-color: #fff;
+  margin-top: 110px;
+  position: fixed;
+}
+
+div.row {
+  border-bottom: 1px dashed #ccc;
+  clear: both;
+  overflow: auto;
+  padding: 40px 10px;
 }
