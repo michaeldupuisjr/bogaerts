@@ -15,8 +15,11 @@ var FantasyTeam = DS.Model.extend({
   of2: DS.belongsTo('player'),
   of3: DS.belongsTo('player'),
   of4: DS.belongsTo('player'),
-
-  // players: Ember.makeArray('catcher', 'firstBaseman')
+  bench1: DS.belongsTo('player'),
+  bench2: DS.belongsTo('player'),
+  bench3: DS.belongsTo('player'),
+  bench4: DS.belongsTo('player'),
+  bench5: DS.belongsTo('player'),
 });
 
 // FantasyTeam.reopenClass({

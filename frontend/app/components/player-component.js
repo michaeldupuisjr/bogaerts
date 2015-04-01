@@ -10,38 +10,49 @@ export default Ember.Component.extend({
   assignPlayerToTeam: Ember.observer('selectedTeam', function() {
     if (this.selectedTeam === null) { return ; }
 
+    var fantasyTeamPos;
     var position = this.player.get('pos');
 
     if (position === 'C' && isEmpty(this.selectedTeam.get('catcher'))) {
-      var fantasyTeamPos = 'catcher'
+      fantasyTeamPos = 'catcher';
     } else if (position === "1B" && isEmpty(this.selectedTeam.get('firstBaseman'))) {
-      var fantasyTeamPos = 'firstBaseman'
+      fantasyTeamPos = 'firstBaseman';
     } else if (position === "2B" && isEmpty(this.selectedTeam.get('secondBaseman'))) {
-      var fantasyTeamPos = 'secondBaseman'
+      fantasyTeamPos = 'secondBaseman';
     } else if (position === "SS" && isEmpty(this.selectedTeam.get('shortstop'))) {
-      var fantasyTeamPos = 'shortstop'
+      fantasyTeamPos = 'shortstop';
     } else if (position === "3B" && isEmpty(this.selectedTeam.get('thirdBaseman'))) {
-      var fantasyTeamPos = 'thirdBaseman'
+      fantasyTeamPos = 'thirdBaseman';
     } else if ((position === "2B" || position === "SS") && isEmpty(this.selectedTeam.get('middleInfielder'))) {
-      var fantasyTeamPos = 'middleInfielder'
+      fantasyTeamPos = 'middleInfielder';
     } else if ((position === "1B" || position === "3B") && isEmpty(this.selectedTeam.get('cornerInfielder'))) {
-      var fantasyTeamPos = 'cornerInfielder'
+      fantasyTeamPos = 'cornerInfielder';
     } else if (position === "UTIL" && isEmpty(this.selectedTeam.get('util'))) {
-      var fantasyTeamPos = 'util'
+      fantasyTeamPos = 'util';
     } else if (position === "OF") {
       if (isEmpty(this.selectedTeam.get('of1'))) {
-        var fantasyTeamPos = 'of1'
+        fantasyTeamPos = 'of1';
       } else if (isEmpty(this.selectedTeam.get('of2'))) {
-        var fantasyTeamPos = 'of2'
+        fantasyTeamPos = 'of2';
       } else if (isEmpty(this.selectedTeam.get('of3'))) {
-        var fantasyTeamPos = 'of3'
+        fantasyTeamPos = 'of3';
       } else if (isEmpty(this.selectedTeam.get('of4'))) {
-        var fantasyTeamPos = 'of4'
+        fantasyTeamPos = 'of4';
       } else if (isEmpty(this.selectedTeam.get('util'))) {
-        var fantasyTeamPos = 'util'
+        fantasyTeamPos = 'util';
+      } else if (isEmpty(this.selectedTeam.get('bench1'))) {
+        fantasyTeamPos = 'bench1';
+      } else if (isEmpty(this.selectedTeam.get('bench2'))) {
+        fantasyTeamPos = 'bench2';
       } else {
         return alert("You don't have a position for this player.");
       }
+    } else if (position !== 'P' && isEmpty(this.selectedTeam.get('util'))) {
+      fantasyTeamPos = 'util';
+    } else if (position !== 'P' && isEmpty(this.selectedTeam.get('bench1'))) {
+      fantasyTeamPos = 'bench1';
+    } else if (position !== 'P' && isEmpty(this.selectedTeam.get('bench2'))) {
+      fantasyTeamPos = 'bench2';
     } else {
       return alert("You don't have a position for this player.");
     }
@@ -62,14 +73,14 @@ export default Ember.Component.extend({
       var position = player.get('fantasyTeamPos');
       var team = player.get('fantasyTeam');
 
-      if (team.get(position) == player) {
+      if (team.get(position) === player) {
         team.set(position, null);
         player.set('fantasyTeam', null);
 
         team.save();
         player.save();
       } else {
-        alert("out of sync")
+        alert("out of sync");
       }
     }
   }
