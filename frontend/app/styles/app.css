@@ -15,7 +15,16 @@ tfoot th {
 
 table, td, th {
   border: 1px solid #ccc;
-  padding: 2px;
+  border-collapse: collapse;
+  padding: 4px 6px;
+}
+
+td.sum {
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 0, 0.1);
 }
 
 .has-been-drafted {
@@ -23,7 +32,7 @@ table, td, th {
 }
 
 div.available-players {
-  background-color: #f6f6f6;
+  background-color: rgba(0, 0, 0, 0.02);
   margin-left: 510px;
 }
 

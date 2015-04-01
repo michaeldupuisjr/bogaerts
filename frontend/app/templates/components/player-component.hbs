@@ -4,12 +4,12 @@
   content=fantasyTeams
   optionLabelPath="content.abbreviation"
   prompt="Select"}}
-
+</td>
+<td>{{player.fantasyTeam.abbreviation}}
   {{#if hasBeenDrafted}}
     <button{{action "dropPlayer" player}}>x</button>
   {{/if}}
 </td>
-<td>{{player.fantasyTeam.abbreviation}}</td>
 <td>{{player.name}}</td>
 <td>{{player.pos}}</td>
 <td>{{player.r}}</td>
@@ -17,6 +17,6 @@
 <td>{{player.rbi}}</td>
 <td>{{player.sb}}</td>
 <td>{{player.avg}}</td>
-<td>{{player.sum}}</td>
-<td>{{player.value_upper}}</td>
-<td>{{player.value_lower}}</td>
+<td class="sum">{{player.sum}}</td>
+<td class="dollar">${{player.value_upper}}</td>
+<td class="dollar">${{player.value_lower}}</td>
