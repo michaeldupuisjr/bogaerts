@@ -16,8 +16,8 @@ players.each do |player|
                              rbi: player[:rbi],
                              sb: player[:sb],
                              sum: player[:sum],
-                             value_lower: player[:lower],
-                             value_upper: player[:upper] })
+                             value_lower: player[:lower].gsub(/\$/, '').to_i,
+                             value_upper: player[:upper].gsub(/\$/, '').to_i })
 end
 
 fantasyTeamAbbreviations = %w{ MG SR MC MD BW JW DW TM}
