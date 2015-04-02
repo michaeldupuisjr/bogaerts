@@ -1,5 +1,6 @@
 body {
-  font-family: 'Courier New';
+  font-family: sans-serif;
+  font-size: 14px;
   margin: 0 10px 10px 10px;
 }
 
@@ -16,11 +17,19 @@ tfoot th {
 table, td, th {
   border: 1px solid #ccc;
   border-collapse: collapse;
-  padding: 4px 6px;
 }
 
-td.sum {
+td, th {
+  padding: .5em;
+}
+
+td.name, td.sum {
   font-weight: bold;
+}
+
+td.stat {
+  font-family: 'Courier New';
+  font-size: 15px;
 }
 
 tr:hover {
@@ -33,7 +42,8 @@ tr:hover {
 
 div.available-players {
   background-color: rgba(0, 0, 0, 0.02);
-  margin-left: 510px;
+  margin-left: 475px;
+  padding: 0px 20px;
 }
 
 div.available-players-by-position {
@@ -43,7 +53,8 @@ div.available-players-by-position {
 
 div.roster {
   background-color: #fff;
-  margin-top: 110px;
+  margin-top: 100px;
+  padding-left: 20px;
   position: fixed;
 }
 

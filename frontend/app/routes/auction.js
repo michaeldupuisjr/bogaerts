@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       fantasyTeams: this.store.find('fantasyTeam'),
       players: this.store.find('player')
-    })
+    });
   },
 
   setupController: function(controller, model) {

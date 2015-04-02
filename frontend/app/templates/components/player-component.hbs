@@ -10,13 +10,13 @@
     <button{{action "dropPlayer" player}}>x</button>
   {{/if}}
 </td>
-<td>{{player.name}}</td>
 <td>{{player.pos}}</td>
-<td>{{player.r}}</td>
-<td>{{player.hr}}</td>
-<td>{{player.rbi}}</td>
-<td>{{player.sb}}</td>
-<td>{{player.avg}}</td>
+<td>{{rank}}</td>
+<td class="name">{{player.name}}</td>
+<td class="stat">{{player.r}}</td>
+<td class="stat">{{player.hr}}</td>
+<td class="stat">{{player.rbi}}</td>
+<td class="stat">{{player.sb}}</td>
+<td class="stat">{{player.avg}}</td>
 <td class="sum">{{player.sum}}</td>
-<td class="dollar">${{player.value_upper}}</td>
 <td class="dollar">${{player.value_lower}}</td>

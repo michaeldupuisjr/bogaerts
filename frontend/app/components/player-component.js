@@ -4,6 +4,12 @@ var isEmpty = Ember.isEmpty;
 
 export default Ember.Component.extend({
   hasBeenDrafted: Ember.computed.bool('player.fantasyTeam'),
+  rank: Ember.computed('player', function() {
+    var players = this.get("players");
+    var player = this.get("player");
+
+    return players.indexOf(player) + 1;
+  }),
   selectedTeam: null,
   tagName: '',
 

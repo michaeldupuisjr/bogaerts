@@ -5,23 +5,23 @@
     <tr>
       <th>Drafted by</th>
       <th>Team</th>
-      <th>Name</th>
       <th>Pos</th>
+      <th>Rnk</th>
+      <th>Name</th>
       <th>R</th>
       <th>HR</th>
       <th>RBI</th>
       <th>SB</th>
       <th>AVG</th>
       <th>Sum</th>
-      <th>Upper $</th>
-      <th>Lower $</th>
+      <th>$</th>
     </tr>
   </thead>
 
   <tbody>
     {{#each player in players}}
       <tr {{bind-attr class="player.fantasyTeam:has-been-drafted"}}>
-        {{player-component player=player fantasyTeams=fantasyTeams}}
+        {{player-component players=players player=player fantasyTeams=fantasyTeams}}
       </tr>
     {{/each}}
   </tbody>
