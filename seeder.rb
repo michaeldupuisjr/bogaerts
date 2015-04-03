@@ -5,7 +5,7 @@ require 'smarter_csv'
 base_uri = 'https://amber-inferno-8722.firebaseio.com/'
 firebase = Firebase::Client.new(base_uri)
 
-players = SmarterCSV.process('csv/hitters.csv')
+players = SmarterCSV.process('csv/hitters-20150402C.csv')
 players.each do |player|
   firebase.push('players', { avg: player[:avg],
                              fg_playerid: player[:playerid],
