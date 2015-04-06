@@ -2,10 +2,10 @@ require 'Firebase'
 require 'smarter_csv'
 
 # Firebase config
-base_uri = 'https://amber-inferno-8722.firebaseio.com/'
+base_uri = ENV[FIREBASE_URI]
 firebase = Firebase::Client.new(base_uri)
 
-players = SmarterCSV.process('csv/hitters-20150402C.csv')
+players = SmarterCSV.process('csv/hitters-20150402.csv')
 players.each do |player|
   firebase.push('players', { avg: player[:avg],
                              fg_playerid: player[:playerid],
