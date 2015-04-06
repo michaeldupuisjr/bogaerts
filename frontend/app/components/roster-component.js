@@ -82,6 +82,12 @@ export default Ember.Component.extend({
     return this.get('team.bench2');
   }),
 
+  bench3: computed('team.bench3', function() {
+    this.updateStats();
+    return this.get('team.bench3');
+  }),
+
+
   updateStats: observer('team.players', function() {
     var players = this.get('team.players');
     var avgArray = players.mapBy('avg');

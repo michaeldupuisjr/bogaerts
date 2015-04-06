@@ -59,6 +59,8 @@ export default Ember.Component.extend({
       fantasyTeamPos = 'bench1';
     } else if (position !== 'P' && isEmpty(this.selectedTeam.get('bench2'))) {
       fantasyTeamPos = 'bench2';
+    } else if (position !== 'P' && isEmpty(this.selectedTeam.get('bench3'))) {
+      fantasyTeamPos = 'bench3';
     } else {
       return alert("You don't have a position for this player.");
     }
